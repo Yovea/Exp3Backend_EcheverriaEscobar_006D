@@ -23,3 +23,29 @@
     height: 500px;
   }
 
+footer{
+    text-align: left;
+    text-size-adjust: 20;
+    background-color: dimgrey;
+    color: white;
+  }
+
+.p{
+    color: black;
+    text-size-adjust: 30;
+    text-align: left;
+}
+
+.tj{
+    color: black;
+    text-size-adjust: 40;
+    text-align: center;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+  }
+  
