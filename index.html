@@ -7,6 +7,31 @@
         <link href="css/Estilos.css" type="text/css" rel="stylesheet">    
         <style>
             body {background-color:black;}
+            
+            /*Perdoname Seba no supe como hacer el CSS externo perdoname*/
+            .presentacionpulenta{
+              width: 400px;
+              height: 400px;
+              position: absolute;
+              margin: 0%;
+              top: 437px;
+              left: 400px;
+              transform: translate(-75%, -50%);
+              background-image: url('img/flopa.jpg');
+              background-size: 100%, 100%;
+              animation:slideshow 12s infinite linear;
+        }
+            /*Si teni mejores porfavor avisame, no tengo mejores imagenes de animales*/
+            @keyframes slideshow{
+              0%{background-image: url('img/specimen/gato.gif'); background-size: 100% 100%;}
+              35%{background-image: url('img/specimen/loro.gif'); background-size: 100% 100%;}
+              75%{background-image: url('img/specimen/pato.png'); background-size: 100% 100%;}
+        }
+
+        </style>
+        <style>
+          
+
         </style>
         <title> Intento de pagina seria </title>
     </head>
@@ -20,9 +45,9 @@
 
     <!--Actual Pain-->
     <body>
-        <br>
-        <h1 class="titulo"> <img src="img/sexo.gif" width="64" height="64" alt=""> Compra y venta de animales exoticos <img src="img/sexo.gif" width="64" height="64" alt=""></h1>
-        <br>
+        <!--Banner-->>
+        <h1 class="titulo"> <img src="img/header1.gif" width="64" height="64" alt=""> Compra y venta de animales exoticos <img src="img/header2.gif" width="64" height="64" alt=""></h1>
+        
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
                 <span class="navbar-toggler-icon"></span>
@@ -33,24 +58,38 @@
             </a>
             <div class="collapse navbar-collapse" id="opciones">   
                 <ul class="navbar-nav">
+                  
                   <li class="nav-item">
                     <a class="nav-link" href="Pag2.html">Quienes somos</a>
                   </li>
+                  
                   <li class="nav-item">
                     <a class="nav-link" href="#">Contactanos</a>
                   </li>
+                  
                   <li class="nav-item">
                     <a class="nav-link" href="#">Locales</a>
                   </li>
+                  
                   <li class="nav-item">
                     <a class="nav-link" href="#">Animales en venta</a>
+                  
                   </li>            
                 </ul>
             </div>
         </nav>
+        
         <br>
-      <h1 class="titulo"> Oh god </h1>  
-      <p style="text-align: justify;" class="sb"> 
-      Ya pondré texto real aquí, estuve sufriendo 2 horas por un carrusel, ten piedad.</p>  
+        <br>
+        
+        <!--Here cones the good shit-->
+        <div class="cajitapulenta"> </div>
+        <div class="presentacionpulenta"> </div>
+
+        <!-- Footer-->>
+        <h3 class="sb"> [Posiblemente imagenes varias de animales exoticos aqui] </h3>
+
+
+
     </body>
 </html>
