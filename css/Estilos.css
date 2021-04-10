@@ -78,3 +78,7 @@ footer{
   background-color: #38085e;
   cursor: pointer;
 }
+
+.carousel-fade .carousel-item, .carousel-item img  {
+  max-height: 90vh;
+}
