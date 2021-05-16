@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/Estilos.css" type="text/css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+    <style>
+        body{background-color: black;}
+    </style>    
+
+    <link rel="icon" href="img/flopa.jpg" type = "image/x-icon">
+    <title> Pedido </title>
+
+    <!--MAS JAVA-->
+    <script type="text/Javascript">
+        function validacion(){
+            r = document.getElementById('op1').selectedIndex;
+            c = document.getElementById('op2').selectedIndex;
+            co = document.getElementById('op3').selectedIndex;
+            d = document.getElementById('dir').value;
+            p = document.getElementById('op4').selectedIndex;
+
+            if (r == null || r == 0)
+                {
+                    alert('Seleccione una región');
+                    document.datos.op1.focus();
+                    return false;
+                }
+            
+            if (c == null || c == 0)
+                {
+                    alert('Seleccione una ciudad');
+                    document.datos.op2.focus();
+                    return false;
+                }
+            
+            if (co == null || co == 0)
+                {
+                    alert('Seleccione una comuna');
+                    document.datos.op3.focus();
+                    return false;
+                }
+            
+            if(d == null || d.length==0 || /^\s+$/.test(d))
+                {
+                    alert('Error.. debe ingresar una dirección');
+                    document.getElementById('dir').value="";
+                    document.datos.d.focus();
+                    return false;
+                }
+            
+            if (p == null || p == 0)
+                {
+                    alert('Seleccione un método');
+                    document.datos.op4.focus();
+                    return false;
+                }
+                
+        }
+    </script>
+
+</head>
+
+<!--MAS MENUS-->
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <button class="navbar-toggler" type="button"> </button>
+
+        <div class="collapse navbar-collapse" id="opciones">   
+            <ul class="navbar-nav">
+              <li class="nav-item"> <a class="nav-link active" href="index.html">Inicio</a> </li>  
+              <li class="nav-item "> <a class="nav-link  active" href="Pag2.html">Quienes somos</a> </li>
+              <li class="nav-item"> <a class="nav-link  active" href="Pag3.html">Galeria</a> </li>
+              <li class="nav-item"> <a class="nav-link  active" href="Pag4.html">Animales en venta</a> </li>           
+            </ul>
+              <span class="navbar-brand ml-auto"> <h4>[Brand] <img src="img/flop.gif" width="30" height="30" alt=""></h4> </span> 
+        </div>
+    </nav>
+    
+    <br> <br>
+
+    <!--MAS FORMULARIOS-->
+    <h1 class="titulo">Pedido</h1>
+    <br> <br>
+    <hr class="hrw">
+    <br>
+
+    <form name="contacto" method="POST" action="Pag7.html" onsubmit="return validacion()">
+        <label class="f" for="reg">Región</label>
+        <select id="op1" name="op1">
+            <option value="">- Seleccione una opción </option>
+            <option value="1">Metropolitana</option>
+            <option value="2">Bio-Bio</option>
+            <option value="3">Del Maule</option>
+            <option value="4">Ñuble</option>
+        </select><br><br>
+
+        <label class="f" for="ciudad">Ciudad</label>
+        <select id="op2" name="op2">
+            <option value="">- Seleccione su ciudad </option>
+            <option value="1">Santiago</option>
+            <option value="2">Valparaíso</option>
+            <option value="3">Chillan</option>
+        </select><br><br>
+
+        <label class="f" for="comu">Comuna</label>
+        <select id="op3" name="op3">
+            <option value="">- Seleccione su comuna</option>
+            <option value="1">Cerrillos</option>
+            <option value="2">Pedro Aguirre Cerda</option>
+            <option value="3">Maipú</option>
+            <option value="4">La Cruz</option>
+            <option value="5">Santo Domingo</option>
+            <option value="6">Los Ángeles</option>
+            <option value="7">Yungay</option>
+        </select><br><br>
+
+        <label class="f" for="dir">Ingrese su dirección: </label>
+        <input type="text" name="dir" id="dir" placeholder="Ingresar dirección" required size="60"><br><br>
+
+        <label class="f" for="pago">Método de pago</label>
+        <select id="op4" name="op4">
+            <option value="">- Seleccione una opción</option>
+            <option value="1">Cuenta Rut</option>
+            <option value="2">Visa</option>
+        </select><br><br>
+
+    </form>
+
+    <input type="submit" onclick="location.href='Pag7.html';" value="Enviar pedido">
+    <hr class="hrw"><br><br>
+
+    <footer> 
+        <br> <br>
+  
+          <div style="margin-left: 5cm; text-align: left; ">
+            <p>Integrantes: <br> <br>
+            <a href="https://www.instagram.com/_thejod_/?hl=es-la"> <img src="img/Icons/ig.png" height="25" width="25"></a> Alain Echeverria.<br>
+            <a href="https://www.instagram.com/d3ad_beat_/?hl=es-la"> <img src="img/Icons/ig.png" height="25" width="25"></a> Sebastian Escobar.
+  
+          <div style="position: relative; bottom: 2.9cm; text-align: right; margin-right: 5cm; text-shadow: #ffffff 0px 1px;" >
+            Referencias  <br>
+            <a href="Pag3.html">  <h3>Galeria</h3> </a>
+            <a href="Pag2.html">  <h3>Quienes somos</h3>  </a>
+            <a href="Pag3.html">  <h3>Nuestros animales</h3> </a>
+            <h2 style="text-align: center ;position: relative; top: 2.9cm;"> ©Copyright 2002-2021  </h2>
+          </div>
+         </div>
+     
+      </footer>
+
+</body>

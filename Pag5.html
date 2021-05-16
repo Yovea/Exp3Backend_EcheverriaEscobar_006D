@@ -16,22 +16,22 @@
 
     <script>
         function CambiarMayusculas(){
-            var a = document.getElementById("nom");
+            var a = document.getElementById("nombre");
             a.value = a.value.toUpperCase();
         }
 
-        //aun no borro el texto de donde me robé el script xddddddddd
+        //No entiendo la razon de porque necesitamos un script especifico para poner singular rut odio este pais
         function checkRut(rut) {
-        // Despejar Puntos
+        //Puntos
         var valor = rut.value.replace('.','');
-        // Despejar Guión
+        //Guión
         valor = valor.replace('-','');
         
-        // Aislar Cuerpo y Dígito Verificador
+        
         cuerpo = valor.slice(0,-1);
         dv = valor.slice(-1).toUpperCase();
         
-        // Formatear RUN
+        
         rut.value = cuerpo + '-'+ dv
         
         // Si no cumple con el mínimo ej. (n.nnn.nnn)
@@ -68,7 +68,48 @@
         // Si todo sale bien, eliminar errores (decretar que es válido)
         rut.setCustomValidity('');
         }
+        
+        //VALIDAR AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        function validacion(){
 
+            nom=document.getElementById('nombre').value;
+            pass=document.getElementById('pass').value;
+            fono=document.getElementById('telefono').value;
+
+            if(nom == null || nom.length==0 || /^\s+$/.test(nom))
+            {
+                alert('Error.. debe ingresar un nombre');
+                document.getElementById('nombre').value="";
+                document.datos.nom.focus();
+                return false;
+            }
+            
+            if(pass == null || pass.length==0 || /^\s+$/.test(pass))
+            {
+                alert('Error.. debe ingresar un nombre');
+                document.getElementById('pass').value="";
+                document.datos.pass.focus();
+                return false;
+            }
+
+            if(!(/^\d{9}$/.test(fono)) )
+            {
+                alert('Error...debe ingresar un teléfono válido');
+                document.getElementById('telefono').value="";
+                document.datos.fono.focus();
+                return false;
+            }    
+            return true;
+        } 
+
+        //voy a separar el email xq me odio
+        function validarEmail(valor) {
+            if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor)){
+                 alert("La dirección de email " + valor + " es correcta!.");
+            } else {
+                alert("La dirección de email es incorrecta!.");
+            }
+        } 
     </script>
 
 </head>
@@ -99,29 +140,48 @@
     <hr class="hrw">
     <br>
 
-    <form name="contacto" method="POST" action="#">
-        <label class="f" for="lname"> Ingresar su nombre: </label>
+    <form name="contacto" method="POST" action="Pag6.html" onsubmit="return validacion()">
+        <label class="f" for="nombre"> Ingresar su nombre: </label>
         <input type="text" id="nombre" name="name" placeholder="Ingresar nombre" onchange="CambiarMayusculas()" size="50" required autofocus><br><br>
 
-        <label class="f" for="lrun"> Ingresar run: </label>
+        <label class="f" for="rut"> Ingresar run: </label>
         <input type="text" id="rut" name="rut" required oninput="checkRut(this)" placeholder="Ingrese RUT"><br><br>
 
         <label class="f" for="lmail"> Ingresar mail: </label>
-        <input type="email" id="mail" name="correo" value="" placeholder="Ingresar correo" size="40" required><br><br>
+        <input type="email" id="mail" name="correo" value="" placeholder="Ingresar correo" size="40" required 
+        onsubmit="return validarEmail(valor)"><br><br>
 
-        <label class="f" for="lpass"> Ingresa contraseña: </label>
-        <input type="password" id="pass" name="contra" placeholder="Ingresar contraseña" required minlength="5" maxlength="10">
-        <input type="password" id="cpass" name="contra" placeholder="Confirmar contraseña" required minlength="5" maxlength="10"><br><br>
-        <!--Voy a meterle esa wea de validacion, es un cacho pero pico-->
+        <label class="f" for="pass"> Ingresa contraseña: </label>
+        <input type="password" id="pass" name="contra" placeholder="Ingresar contraseña" required minlength="5" maxlength="10"><br><br>
+        <!--Aquí iria mi validacion si tuviera una-->
 
-        <label class="f" for="lfono"> Ingresar telefono: </label>
+        <label class="f" for="telefono"> Ingresar telefono: </label>
         <input type="text" name="fono" id="telefono" placeholder="Ingrese su telefono" size="20">
 
-        <input type="submit" value="Enter"> 
+        <input type="submit" onclick="location.href='Pag6.html';" value="Enter">
         <input type="reset" value="Limpiar">
 
         <hr class="hrw">
     </form>
+
+    <footer> 
+        <br> <br>
+  
+          <div style="margin-left: 5cm; text-align: left; ">
+            <p>Integrantes: <br> <br>
+            <a href="https://www.instagram.com/_thejod_/?hl=es-la"> <img src="img/Icons/ig.png" height="25" width="25"></a> Alain Echeverria.<br>
+            <a href="https://www.instagram.com/d3ad_beat_/?hl=es-la"> <img src="img/Icons/ig.png" height="25" width="25"></a> Sebastian Escobar.
+  
+          <div style="position: relative; bottom: 2.9cm; text-align: right; margin-right: 5cm; text-shadow: #ffffff 0px 1px;" >
+            Referencias  <br>
+            <a href="Pag3.html">  <h3>Galeria</h3> </a>
+            <a href="Pag2.html">  <h3>Quienes somos</h3>  </a>
+            <a href="Pag3.html">  <h3>Nuestros animales</h3> </a>
+            <h2 style="text-align: center ;position: relative; top: 2.9cm;"> ©Copyright 2002-2021  </h2>
+          </div>
+         </div>
+     
+      </footer>
 
 
 </body>
