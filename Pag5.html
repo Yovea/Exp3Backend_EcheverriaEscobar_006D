@@ -14,7 +14,7 @@
     <link rel="icon" href="img/flopa.jpg" type = "image/x-icon">
     <title> Registro </title>
 
-    <script>
+    <script type="text/Javascript">
         function CambiarMayusculas(){
             var a = document.getElementById("nombre");
             a.value = a.value.toUpperCase();
@@ -75,6 +75,7 @@
             nom=document.getElementById('nombre').value;
             pass=document.getElementById('pass').value;
             fono=document.getElementById('telefono').value;
+            rut=document.getElementById('rut').value;
 
             if(nom == null || nom.length==0 || /^\s+$/.test(nom))
             {
@@ -86,9 +87,17 @@
             
             if(pass == null || pass.length==0 || /^\s+$/.test(pass))
             {
-                alert('Error.. debe ingresar un nombre');
+                alert('Error.. debe ingresar una contraseña valida');
                 document.getElementById('pass').value="";
                 document.datos.pass.focus();
+                return false;
+            }
+
+            if(rut == null || rut.length==0 || /^\s+$/.test(rut))
+            {
+                alert('Error.. debe ingresar un rut valido');
+                document.getElementById('rut').value="";
+                document.datos.rut.focus();
                 return false;
             }
 
@@ -109,7 +118,7 @@
             } else {
                 alert("La dirección de email es incorrecta!.");
             }
-        } 
+        }  
     </script>
 
 </head>
@@ -140,7 +149,7 @@
     <hr class="hrw">
     <br>
 
-    <form name="contacto" method="POST" action="Pag6.html" onsubmit="return validacion()">
+    <form name="contacto" method="POST" action="#">
         <label class="f" for="nombre"> Ingresar su nombre: </label>
         <input type="text" id="nombre" name="name" placeholder="Ingresar nombre" onchange="CambiarMayusculas()" size="50" required autofocus><br><br>
 
@@ -148,20 +157,31 @@
         <input type="text" id="rut" name="rut" required oninput="checkRut(this)" placeholder="Ingrese RUT"><br><br>
 
         <label class="f" for="lmail"> Ingresar mail: </label>
-        <input type="email" id="mail" name="correo" value="" placeholder="Ingresar correo" size="40" required 
-        onsubmit="return validarEmail(valor)"><br><br>
+        <input type="email" id="mail" name="correo" value="" placeholder="Ingresar correo" size="40" required ><br><br>
 
         <label class="f" for="pass"> Ingresa contraseña: </label>
         <input type="password" id="pass" name="contra" placeholder="Ingresar contraseña" required minlength="5" maxlength="10"><br><br>
-        <!--Aquí iria mi validacion si tuviera una-->
+        <!--Ya no se que estoy haciendo con mi vida-->
 
         <label class="f" for="telefono"> Ingresar telefono: </label>
         <input type="text" name="fono" id="telefono" placeholder="Ingrese su telefono" size="20">
 
-        <input type="submit" onclick="location.href='Pag6.html';" value="Enter">
+        <!--Por qué un onclick arruina las validaciones? nadie sabe-->
+        <input type="submit" value="Enter" onclick="return validacion(), link()">
+        <script>
+            function link(){
+                confirm("Datos correctamente enviados, presione aceptar para continuar! ")
+                    if (window.confirm('Presione aceptar para ir a la sig página')) 
+                    {
+                    location.href='Pag6.html';
+                    }
+                    return false;
+            }
+        </script>
+        <!--OH GOD LO LOGRÉ HACE LO QUE QUIERO QUE HAGA SOY TAN FELIZ-->
         <input type="reset" value="Limpiar">
 
-        <hr class="hrw">
+        <hr class="hrw"><br><br><br>
     </form>
 
     <footer> 

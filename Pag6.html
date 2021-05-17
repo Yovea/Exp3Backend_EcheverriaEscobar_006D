@@ -89,7 +89,7 @@
     <hr class="hrw">
     <br>
 
-    <form name="contacto" method="POST" action="Pag7.html" onsubmit="return validacion()">
+    <form name="contacto" method="POST" action="Pag7.html">
         <label class="f" for="reg">Región</label>
         <select id="op1" name="op1">
             <option value="">- Seleccione una opción </option>
@@ -131,7 +131,18 @@
 
     </form>
 
-    <input type="submit" onclick="location.href='Pag7.html';" value="Enviar pedido">
+    <!--MAS INPUTS-->
+    <input type="submit" value="Enter" onclick="return validacion(), link()">
+        <script>
+            function link(){
+                confirm("Para enviar el pedido, presione aceptar")
+                    if (window.confirm('Pedido enviado, presione aceptar para salir')) 
+                    {
+                    location.href='Pag7.html';
+                    }
+                    return false;
+            }
+        </script>
     <hr class="hrw"><br><br>
 
     <footer> 
