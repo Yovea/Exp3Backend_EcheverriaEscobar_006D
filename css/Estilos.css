@@ -187,3 +187,90 @@ footer{
   text-size-adjust: 15;
   text-align: center;
 }
+
+
+/*Me quiero matar, no pense que hacer la pagina responsive fuese ser tan doloroso*/
+@media screen and (max-width: 960px){
+  .navbar {
+    background-color: black; 
+    border-bottom: 2px solid; 
+    border-color: rgb(157, 19, 9);
+    height: 60px;
+  }
+
+  .Sub_btn {
+    position: absolute;
+    margin-top: 19.7%;
+    margin-right: -29%;
+
+  }
+  
+  .imagenr{
+    width: 200px;
+    height: 200px;
+    position: sticky;
+    margin: 25px;
+    margin-right: 4cm;
+
+  }
+  
+  .imagenl{
+    width: 200px;
+    height: 200px;
+    position: sticky;
+    margin: 25px;
+    margin-left: 5cm;
+
+  }
+ 
+  .textoindexr{
+    position: sticky; 
+    top: 80px;
+    text-shadow: 1px 1px purple;
+    margin-left: 12%;
+    padding-bottom: 25px;
+  }
+  
+  .textoindexl{
+    position: sticky; 
+    text-align: left; 
+    top: 90px; 
+    text-shadow: 1px 1px purple;
+    margin-right: 10%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    
+  }
+  
+  .textor{
+    position: sticky; 
+    text-align:left;
+    top: 40px;
+    margin-left: 10%;
+    padding-bottom: 25px;
+  }
+  
+  .textol{
+    position: sticky; 
+    text-align: left; 
+    top: 90px; 
+    margin-right: 10%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  
+  .cajitapulenta {
+    background-color:  #111111;
+    height: inherit;
+  }
+
+  .presentacionpulenta{
+    width: 80%;
+    height: 200px;
+    min-height: 100px;
+    margin-left: 11%;
+    padding: 30%;
+    
+  }
+
+}
