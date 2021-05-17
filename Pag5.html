@@ -8,7 +8,16 @@
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
 
     <style>
-        body{background-color: black;}
+        body{
+          padding: 25px;
+          background-color: white;
+          color: black;
+          font-size: 25px;
+        }
+        .dark-mode{
+          background-color: black;
+          color: white;
+        }
     </style>    
 
     <link rel="icon" href="img/flopa.jpg" type = "image/x-icon">
@@ -140,6 +149,14 @@
               <span class="navbar-brand ml-auto"> <h4>[Brand] <img src="img/flop.gif" width="30" height="30" alt=""></h4> </span> 
         </div>
     </nav>
+    <button class="boton" onclick="myFunction()">Toggle dark mode</button>
+
+    <script>
+    function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+    }
+    </script>
     
     <br> <br>
 
@@ -150,20 +167,20 @@
     <br>
 
     <form name="contacto" method="POST" action="#">
-        <label class="f" for="nombre"> Ingresar su nombre: </label>
+        <label for="nombre"> Ingresar su nombre: </label>
         <input type="text" id="nombre" name="name" placeholder="Ingresar nombre" onchange="CambiarMayusculas()" size="50" required autofocus><br><br>
 
-        <label class="f" for="rut"> Ingresar run: </label>
+        <label for="rut"> Ingresar run: </label>
         <input type="text" id="rut" name="rut" required oninput="checkRut(this)" placeholder="Ingrese RUT"><br><br>
 
-        <label class="f" for="lmail"> Ingresar mail: </label>
+        <label for="lmail"> Ingresar mail: </label>
         <input type="email" id="mail" name="correo" value="" placeholder="Ingresar correo" size="40" required ><br><br>
 
-        <label class="f" for="pass"> Ingresa contraseña: </label>
+        <label for="pass"> Ingresa contraseña: </label>
         <input type="password" id="pass" name="contra" placeholder="Ingresar contraseña" required minlength="5" maxlength="10"><br><br>
         <!--Ya no se que estoy haciendo con mi vida-->
 
-        <label class="f" for="telefono"> Ingresar telefono: </label>
+        <label for="telefono"> Ingresar telefono: </label>
         <input type="text" name="fono" id="telefono" placeholder="Ingrese su telefono" size="20">
 
         <!--Por qué un onclick arruina las validaciones? nadie sabe-->

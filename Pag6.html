@@ -8,8 +8,17 @@
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
 
     <style>
-        body{background-color: black;}
-    </style>    
+        body{
+          padding: 25px;
+          background-color: white;
+          color: black;
+          font-size: 25px;
+        }
+        .dark-mode{
+          background-color: black;
+          color: white;
+        }
+    </style> 
 
     <link rel="icon" href="img/flopa.jpg" type = "image/x-icon">
     <title> Pedido </title>
@@ -80,8 +89,16 @@
               <span class="navbar-brand ml-auto"> <h4>[Brand] <img src="img/flop.gif" width="30" height="30" alt=""></h4> </span> 
         </div>
     </nav>
-    
-    <br> <br>
+    <button class="boton" onclick="myFunction()">Toggle dark mode</button>
+
+    <script>
+    function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+    }
+    </script>
+
+    <br><br>
 
     <!--MAS FORMULARIOS-->
     <h1 class="titulo">Pedido</h1>
@@ -90,7 +107,7 @@
     <br>
 
     <form name="contacto" method="POST" action="Pag7.html">
-        <label class="f" for="reg">Región</label>
+        <label for="reg">Región</label>
         <select id="op1" name="op1">
             <option value="">- Seleccione una opción </option>
             <option value="1">Metropolitana</option>
@@ -99,7 +116,7 @@
             <option value="4">Ñuble</option>
         </select><br><br>
 
-        <label class="f" for="ciudad">Ciudad</label>
+        <label for="ciudad">Ciudad</label>
         <select id="op2" name="op2">
             <option value="">- Seleccione su ciudad </option>
             <option value="1">Santiago</option>
@@ -107,7 +124,7 @@
             <option value="3">Chillan</option>
         </select><br><br>
 
-        <label class="f" for="comu">Comuna</label>
+        <label for="comu">Comuna</label>
         <select id="op3" name="op3">
             <option value="">- Seleccione su comuna</option>
             <option value="1">Cerrillos</option>
@@ -119,10 +136,10 @@
             <option value="7">Yungay</option>
         </select><br><br>
 
-        <label class="f" for="dir">Ingrese su dirección: </label>
+        <label for="dir">Ingrese su dirección: </label>
         <input type="text" name="dir" id="dir" placeholder="Ingresar dirección" required size="60"><br><br>
 
-        <label class="f" for="pago">Método de pago</label>
+        <label for="pago">Método de pago</label>
         <select id="op4" name="op4">
             <option value="">- Seleccione una opción</option>
             <option value="1">Cuenta Rut</option>

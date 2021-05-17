@@ -1,5 +1,4 @@
 .titulo{
-    color: white;
     text-size-adjust: 40;
     text-align: center;
 }
@@ -129,8 +128,7 @@ footer{
 .textoindexl{
   position: relative; 
   text-align: left; 
-  top: 90px; 
-  color:white; 
+  top: 90px;  
   margin-left: 4cm; 
   margin-right: 17cm; 
   text-shadow: 1px 1px orange;
@@ -140,8 +138,7 @@ footer{
 .textor{
   position: relative; 
   text-align:left;
-  top: 40px;
-  color:white;
+  top: 10px;
   margin-left: 17cm;
   margin-right: 4cm; 
 }
@@ -149,8 +146,7 @@ footer{
 .textol{
   position: relative; 
   text-align: left; 
-  top: 90px; 
-  color:white; 
+  top: 70px;  
   margin-left: 4cm; 
   margin-right: 17cm; 
 }
@@ -175,12 +171,8 @@ footer{
   border-style: groove;
 }
 
-.f{
-  color: white;
-}
-
 .hrw{
-  border-top: 1px solid white;
+  border-top: 1px solid;
 }
 
 .te{
@@ -273,4 +265,19 @@ footer{
     
   }
 
+}
+
+/*boton pulento pulentoso*/
+.boton{
+  background-color: red;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  padding: 10px 24px;
+  float: right;
 }

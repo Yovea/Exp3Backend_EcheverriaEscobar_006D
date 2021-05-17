@@ -9,10 +9,18 @@
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
     <link href="css/Estilos.css" type="text/css" rel="stylesheet">    
   
-  <style>
-    body {background-color:black;}
-    
-  </style>
+    <style>
+      body{
+        padding: 25px;
+        background-color: white;
+        color: black;
+        font-size: 25px;
+      }
+      .dark-mode{
+        background-color: black;
+        color: white;
+      }
+    </style> 
   
 </head>
 <div style="background-image: url('img/bg2.jpg');"></div>
@@ -32,11 +40,19 @@
           <span class="navbar-brand ml-auto"> <h4> Galeria </h4> </span> 
     </div>
 </nav>
+<button class="boton" onclick="myFunction()">Toggle dark mode</button>
 
-
+    <script>
+    function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+    }
+    </script>
+  
+  <br
 
 <div class="container">   
-  <h1 class="titulo">Nuestros animales mas memorables! <3</h1>
+  <h1 class="titulo">Nuestros animales mas memorables!</h1>
   <br>
   <br>
   <div class="row">       
@@ -118,7 +134,7 @@
 <br>
   
 
-  <!--Me gusta ponerlos en la misma linea-->>             
+  <!--Me gusta ponerlos en la misma linea-->             
   <br> <br> <br> <br> <br> <br>
 
   <footer> 

@@ -9,9 +9,18 @@
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
     <link href="css/Estilos.css" type="text/css" rel="stylesheet">    
   
-  <style>
-    body {background-color:black;}
-  </style>
+    <style>
+      body{
+        padding: 25px;
+        background-color: white;
+        color: black;
+        font-size: 25px;
+      }
+      .dark-mode{
+        background-color: black;
+        color: white;
+      }
+    </style> 
   
 </head>
   <body>
@@ -28,8 +37,15 @@
         </ul>
           <span class="navbar-brand ml-auto"> <h4>Quienes somos</h4> </span> 
     </div>
-</nav>
+  </nav>
+  <button class="boton" onclick="myFunction()">Toggle dark mode</button>
 
+    <script>
+    function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+    }
+    </script>
 
   <br>
   <br>
@@ -72,12 +88,12 @@
         Nuestra vision como empresa y equipo de trabajo es llevar nuestros servicios fuera del pais, globalizarlo para así poder tratar nuevas especies y darles un lugar mejor
         donde vivir, garantizando eficacia y profesionales en el area de cuidado animal.
     </p>
-    </div>
   </div>
+</div>
 
   
 
-  <!--Me gusta ponerlos en la misma linea-->>             
+  <!--Me gusta ponerlos en la misma linea-->             
   <br> <br> <br> <br> <br> <br>
   <br>
   

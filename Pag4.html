@@ -9,8 +9,17 @@
   <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
   <link href="css/Estilos.css" type="text/css" rel="stylesheet">    
   <style>
-    body {background-color:black;}
-  </style>
+    body{
+      padding: 25px;
+      background-color: white;
+      color: black;
+      font-size: 25px;
+    }
+    .dark-mode{
+      background-color: black;
+      color: white;
+    }
+  </style> 
   
 </head>
 <body>
@@ -28,6 +37,14 @@
             <span class="navbar-brand ml-auto"> <h4>Animales en venta</h4> </span> 
       </div>
   </nav>
+  <button class="boton" onclick="myFunction()">Toggle dark mode</button>
+
+    <script>
+    function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+    }
+    </script>
     
 
   <br>
@@ -35,7 +52,7 @@
   <h2 class="titulo"> Nuestra Fina seleccion de animales </h2>  
   <div class="container">
 
-    <div class"textor" style="position: relative; text-align: left; top: 2cm; margin-left: 55%; color: #ffffff;">
+    <div class"textor" style="position: relative; text-align: left; top: 2cm; margin-left: 55%;">
       <h1 style="font: italic;">Caracal</h1>         
    
    
