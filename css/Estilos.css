@@ -128,7 +128,8 @@ footer{
 .textoindexl{
   position: relative; 
   text-align: left; 
-  top: 90px;  
+  top: 90px;
+  color:white;
   margin-left: 4cm; 
   margin-right: 17cm; 
   text-shadow: 1px 1px orange;
