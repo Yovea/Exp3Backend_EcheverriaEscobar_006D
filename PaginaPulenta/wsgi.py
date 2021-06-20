@@ -1,5 +1,5 @@
 """
-WSGI config for Pdjango project.
+WSGI config for PaginaPulenta project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Pdjango.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'PaginaPulenta.settings')
 
 application = get_wsgi_application()

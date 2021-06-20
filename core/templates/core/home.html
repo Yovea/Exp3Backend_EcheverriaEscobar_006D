@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html>
+  {% load static %}
    <!--Backend-->
     <head>        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
-        <link href="css/Estilos.css" type="text/css" rel="stylesheet">    
+        <link href="{% static 'core/css/bootstrap.min.css'%}" type="text/css" rel="stylesheet"> 
+        <link href="{% static 'core/css/Estilos.css'%}" type="text/css" rel="stylesheet">    
         <style>
             body {background-color:black;}
             
             /*No sale el floppa si no lo tengo aqui perdoname seba no se como hacerlo de otra manera*/
-            .presentacionpulenta{  background-image: url('img/specimen/flopgif.gif'); background-size: 100% 100%;}
+            .presentacionpulenta{  background-image: url("{% static 'core/img/specimen/flopgif.gif'%}"); background-size: 100% 100%;}
 
             @keyframes slideshow{
-              0%{background-image: url('img/specimen/animal1.gif'); background-size: 100% 100%;}
-              35%{background-image: url('img/specimen/animal2.jpeg'); background-size: 100% 100%;}
-              75%{background-image: url('img/specimen/animal3.gif'); background-size: 100% 100%;}
+              0%{background-image: url("{% static 'core/img/specimen/animal1.gif'%}"); background-size: 100% 100%;}
+              35%{background-image: url("{% static 'core/img/specimen/animal2.jpeg'%}"); background-size: 100% 100%;}
+              75%{background-image: url("{% static 'core/img/specimen/animal3.gif'%}"); background-size: 100% 100%;}
 }
         </style>
         
-        <link rel="icon" href="img/flopa.jpg" type = "image/x-icon">
+        <link rel="icon" href="{% static 'core/img/flopa.jpg'%}" type = "image/x-icon">
         <title> Compra y venta animales exoticos </title>
     
       </head>
 
-    <div style="background-image: url('img/bg.jpg');">
+    <div style="background-color:rgb(211, 134, 239)">
     
     <audio autoplay loop >   
       <source src="audio/sweettunes.mp3">
@@ -41,7 +42,7 @@
                   <li class="nav-item"> <a class="nav-link  active" href="Pag3.html">Galeria</a> </li>
                   <li class="nav-item"> <a class="nav-link  active" href="Pag4.html">Animales en venta</a> </li>           
                 </ul>
-                  <span class="navbar-brand ml-auto"> <h4>[Brand] <img src="img/flop.gif" width="30" height="30" alt=""></h4> </span> 
+                  <span class="navbar-brand ml-auto"> <h4>[Brand] <img src="{% static 'core/img/flop.gif'%}" width="30" height="30" alt=""></h4> </span> 
             </div>
         </nav>
         
@@ -66,7 +67,7 @@
 
 
         <div class="cajitapulenta"> 
-          <img src="img/gallery/what.gif" style="width: 350px; height: 350px; position: sticky; margin: 25px; margin-right: 4cm; float: right; border-style: groove;"> </img>    
+          <img src="{% static 'core/img/gallery/what.gif'%}" style="width: 350px; height: 350px; position: sticky; margin: 25px; margin-right: 4cm; float: right; border-style: groove;"> </img>    
               <h3 class="textoindexl">Somos básicamente una empresa veterinaria, <br>
                  la cual busca especimens especificos de nuestra fauna, 
                 que se encuentren en peligro, o buscando un nuevo hogar donde puedan vivir.<br>
@@ -98,8 +99,8 @@
 
         <div style="margin-left: 5cm; text-align: left; ">
           <p>Integrantes: <br> <br>
-          <a href="https://www.instagram.com/_thejod_/?hl=es-la"> <img src="img/Icons/ig.png" height="25" width="25"></a> Alain Echeverria.<br>
-          <a href="https://www.instagram.com/d3ad_beat_/?hl=es-la"> <img src="img/Icons/ig.png" height="25" width="25"></a> Sebastian Escobar.
+          <a href="https://www.instagram.com/_thejod_/?hl=es-la"> <img src="{% static 'core/img/Icons/ig.png'%}" height="25" width="25"></a> Alain Echeverria.<br>
+          <a href="https://www.instagram.com/d3ad_beat_/?hl=es-la"> <img src="{% static 'core/img/Icons/ig.png'%}" height="25" width="25"></a> Sebastian Escobar.
 
         <div style="position: relative; bottom: 2.9cm; text-align: right; margin-right: 5cm; text-shadow: #ffffff 0px 1px;" >
           Referencias  <br>
