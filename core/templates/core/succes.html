@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+  {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/Estilos.css" type="text/css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="{% static 'core/css/bootstrap.min.css'%}" type="text/css" rel="stylesheet"> 
+    <link href="{% static 'core/css/Estilos.css'%}" type="text/css" rel="stylesheet"> 
 
     <style>
         body{
@@ -20,7 +21,7 @@
         }
     </style>
 
-    <link rel="icon" href="img/flopa.jpg" type = "image/x-icon">
+  <link rel="icon" href="{% static 'core/img/flopa.jpg'%" type = "image/x-icon">
     <title>End</title>
 
 </head>
@@ -38,7 +39,7 @@
     <br><br><br><br>
     <h1 style="text-align: center; text-size-adjust: 20;"> Su pedido ha sido enviado correctamente!  </h1><br><br><br><br><br><br><br><br><br>
 
-    <a href="index.html"><h3 class="te" onmouseover="style.color='red'" onmouseout="style.color='blue'">Volver al inicio</h3></a>
+    <a href="{% url 'home' %}"><h3 class="te" onmouseover="style.color='red'" onmouseout="style.color='blue'">Volver al inicio</h3></a>
     <br><br><br><br><br><br><br><br><br>
 
     <footer> 
@@ -46,9 +47,9 @@
   
           <div style="margin-left: 5cm; text-align: left; ">
             <p>Integrantes: <br> <br>
-            <a href="https://www.instagram.com/_thejod_/?hl=es-la"> <img src="img/Icons/ig.png" height="25" width="25"></a> Alain Echeverria.<br>
-            <a href="https://www.instagram.com/d3ad_beat_/?hl=es-la"> <img src="img/Icons/ig.png" height="25" width="25"></a> Sebastian Escobar.
-  
+              <a href="https://www.instagram.com/_thejod_/?hl=es-la"> <img src="{% static 'core/img/Icons/ig.png'%}" height="25" width="25"></a> Alain Echeverria.<br>
+              <a href="https://www.instagram.com/d3ad_beat_/?hl=es-la"> <img src="{% static 'core/img/Icons/ig.png'%}" height="25" width="25"></a> Sebastian Escobar.
+    
           <h2 style="text-align: center ;position: relative; top: 2.9cm;"> ©Copyright 2002-2021  </h2>
           </div>
          </div>

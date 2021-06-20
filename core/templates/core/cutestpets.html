@@ -1,13 +1,14 @@
 <!doctype html>
 <html>
+  {% load static %}
   <head>
 
-    <link rel="icon" href="img/flopa.jpg" type = "image/x-icon">
+    <link rel="icon" href="{% static 'core/img/flopa.jpg'%" type = "image/x-icon">
     <title> Galeria </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"> 
-    <link href="css/Estilos.css" type="text/css" rel="stylesheet">    
+    <link href="{% static 'core/css/bootstrap.min.css'%}" type="text/css" rel="stylesheet"> 
+    <link href="{% static 'core/css/Estilos.css'%}" type="text/css" rel="stylesheet">  
   
     <style>
       body{
@@ -33,9 +34,9 @@
 
     <div class="collapse navbar-collapse" id="opciones">   
         <ul class="navbar-nav">
-          <li class="nav-item"> <a class="nav-link active" href="index.html">Inicio</a> </li>
-          <li class="nav-item"> <a class="nav-link active" href="cutestpets.html">Galeria</a> </li>
-          <li class="nav-item"> <a class="nav-link active" href="exitscam.html">Animales en venta</a> </li>
+          <li class="nav-item"> <a class="nav-link active" href="{% url 'home' %}">Inicio</a> </li>
+          <li class="nav-item"> <a class="nav-link active" href="{% url 'Quienessomos' %}">Quienes somos</a> </li>
+          <li class="nav-item"> <a class="nav-link active" href="{% url 'Compra' %}">Animales en venta</a> </li> 
         </ul>
           <span class="navbar-brand ml-auto"> <h4> Galeria </h4> </span> 
     </div>
@@ -58,7 +59,7 @@
   <div class="row">       
     <div class="col-md">        
         <div class="card">
-          <img class="card-img-top" src="img/gallery/kani.png">            
+          <img class="card-img-top" src="{% static 'core/img/gallery/kani.png' %}">            
           <div class="card-body">
             <h4>Kani</h4>
             <p>Famoso cangrejo de la isla de pascua. A pesar hacer de no hacer mucho, siempre que se le veia estaba bailando como sino hubiese un mañana! </p>
@@ -72,7 +73,7 @@
             <h4 class="card-title">Martin</h4>
             <p class="card-text">Nuestro amado monete mascota!, Apesar de ser algo cascarrabias siempre ha sido nuestro primate favorito! </p>
           </div>
-          <img class="card-img-bottom" src="img/gallery/martin.png">                        
+          <img class="card-img-bottom" src="{% static 'core/img/gallery/martin.png' %}">                        
         </div>          
     </div>
 
@@ -84,7 +85,7 @@
     <div class="row">       
       <div class="col-md">        
           <div class="card">
-            <img class="card-img-top" src="img/gallery/Drillo.png">            
+            <img class="card-img-top" src="{% static 'core/img/gallery/Drillo.png' %}">            
             <div class="card-body">
               <h4 class="card-title">Drillo</h4>
               <p class="card-text">A pesar de estar sonriendo, Drillo esta en eterno dolor </p>
@@ -98,7 +99,7 @@
               <h4 class="card-title">Ina</h4>
               <p class="card-text">Es timida, aun le cuesta encariñarse con algunas personas de nuestro personal. </p>
             </div>
-            <img class="card-img-bottom" src="img/gallery/Ina.jpg">                        
+            <img class="card-img-bottom" src="{% static 'core/img/gallery/Ina.jpg' %}">                        
           </div>          
       </div>
     </div>  
@@ -109,7 +110,7 @@
     <div class="row">       
       <div class="col-md">        
           <div class="card">
-            <img class="card-img-top" src="img/gallery/floppa.jpg">            
+            <img class="card-img-top" src="{% static 'core/img/gallery/floppa.jpg' %}">            
             <div class="card-body">
               <h4 class="card-title">King</h4>
               <p class="card-text">Nuestro animal favorito!, una de las mas memorables mascotas de nuestra organizacion </p>
@@ -123,7 +124,7 @@
               <h4 class="card-title">Shuty</h4>
               <p class="card-text">Otro de nuestros animales favoritos!, sobrevivío una terrible catastrofe, pero eso no quita que esté lleno de amor.</p>
             </div>
-            <img class="card-img-bottom" src="img/gallery/Shuty.jpg">                        
+            <img class="card-img-bottom" src="{% static 'core/img/gallery/Shuty.jpg' %}">                        
           </div>          
       </div>  
     </div>
@@ -142,14 +143,14 @@
 
       <div style="margin-left: 5cm; text-align: left; ">
         <p>Integrantes: <br> <br>
-        <a href="https://www.instagram.com/_thejod_/?hl=es-la"> <img src="img/Icons/ig.png" height="25" width="25"></a> Alain Echeverria.<br>
-        <a href="https://www.instagram.com/d3ad_beat_/?hl=es-la"> <img src="img/Icons/ig.png" height="25" width="25"></a> Sebastian Escobar.
+          <a href="https://www.instagram.com/_thejod_/?hl=es-la"> <img src="{% static 'core/img/Icons/ig.png'%}" height="25" width="25"></a> Alain Echeverria.<br>
+          <a href="https://www.instagram.com/d3ad_beat_/?hl=es-la"> <img src="{% static 'core/img/Icons/ig.png'%}" height="25" width="25"></a> Sebastian Escobar.
 
       <div style="position: relative; bottom: 2.9cm; text-align: right; margin-right: 5cm; text-shadow: #ffffff 0px 1px;" >
         Referencias  <br>
-        <a href="Pag3.html">  <h3>Galeria</h3> </a>
-        <a href="Pag2.html">  <h3>Quienes somos</h3>  </a>
-        <a href="Pag3.html">  <h3>Nuestros animales</h3> </a>
+        <a href="{% url 'Galeria' %}">  <h3>Galeria</h3> </a>
+        <a href="{% url 'Quienessomos' %}">  <h3>Quienes somos</h3>  </a>
+        <a href="{% url 'Compra' %}">  <h3>Nuestros animales</h3> </a>
         <h2 style="text-align: center ;position: relative; top: 2.9cm;"> ©Copyright 2002-2021 </h2>
       </div>
      </div>

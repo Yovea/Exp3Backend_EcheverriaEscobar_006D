@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/Estilos.css" type="text/css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="{% static 'core/css/bootstrap.min.css'%}" type="text/css" rel="stylesheet"> 
+    <link href="{% static 'core/css/Estilos.css'%}" type="text/css" rel="stylesheet"> 
 
     <style>
         body{
@@ -20,7 +21,7 @@
         }
     </style> 
 
-    <link rel="icon" href="img/flopa.jpg" type = "image/x-icon">
+    <link rel="icon" href="{% static 'core/img/flopa.jpg'%" type = "image/x-icon">
     <title> Pedido </title>
 
     <!--MAS JAVA-->
@@ -86,7 +87,7 @@
               <li class="nav-item"> <a class="nav-link  active" href="Pag3.html">Galeria</a> </li>
               <li class="nav-item"> <a class="nav-link  active" href="Pag4.html">Animales en venta</a> </li>           
             </ul>
-              <span class="navbar-brand ml-auto"> <h4>[Brand] <img src="img/flop.gif" width="30" height="30" alt=""></h4> </span> 
+              <span class="navbar-brand ml-auto"> <h4>[Brand] <img src="{% static 'core/img/flop.gif' %}" width="30" height="30" alt=""></h4> </span> 
         </div>
     </nav>
     <button class="boton" onclick="myFunction()">Toggle dark mode</button>
@@ -155,7 +156,7 @@
                 confirm("Para enviar el pedido, presione aceptar")
                     if (window.confirm('Pedido enviado, presione aceptar para salir')) 
                     {
-                    location.href='Pag7.html';
+                    location.href="{% url 'End' %}";
                     }
                     return false;
             }
@@ -164,18 +165,18 @@
 
     <footer> 
         <br> <br>
-  
+    
           <div style="margin-left: 5cm; text-align: left; ">
             <p>Integrantes: <br> <br>
-            <a href="https://www.instagram.com/_thejod_/?hl=es-la"> <img src="img/Icons/ig.png" height="25" width="25"></a> Alain Echeverria.<br>
-            <a href="https://www.instagram.com/d3ad_beat_/?hl=es-la"> <img src="img/Icons/ig.png" height="25" width="25"></a> Sebastian Escobar.
-  
+              <a href="https://www.instagram.com/_thejod_/?hl=es-la"> <img src="{% static 'core/img/Icons/ig.png'%}" height="25" width="25"></a> Alain Echeverria.<br>
+              <a href="https://www.instagram.com/d3ad_beat_/?hl=es-la"> <img src="{% static 'core/img/Icons/ig.png'%}" height="25" width="25"></a> Sebastian Escobar.
+    
           <div style="position: relative; bottom: 2.9cm; text-align: right; margin-right: 5cm; text-shadow: #ffffff 0px 1px;" >
             Referencias  <br>
-            <a href="Pag3.html">  <h3>Galeria</h3> </a>
-            <a href="Pag2.html">  <h3>Quiénes somos</h3>  </a>
-            <a href="Pag3.html">  <h3>Nuestros animales</h3> </a>
-            <h2 style="text-align: center ;position: relative; top: 2.9cm;"> ©Copyright 2002-2021  </h2>
+            <a href="{% url 'Galeria' %}">  <h3>Galeria</h3> </a>
+            <a href="{% url 'Quienessomos' %}">  <h3>Quienes somos</h3>  </a>
+            <a href="{% url 'Compra' %}">  <h3>Nuestros animales</h3> </a>
+            <h2 style="text-align: center ;position: relative; top: 2.9cm;"> ©Copyright 2002-2021 </h2>
           </div>
          </div>
      
