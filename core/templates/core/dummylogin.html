@@ -167,32 +167,49 @@
     <hr class="hrw">
     <br>
 
-    <div class="row">
-        <form method="POST" action="" id="formulario">
-        {% csrf_token %}
-        <div class="form-group">
-        {{ form.as_table}}
+    <div class="container">
+        <div class="row">
+            <form method="POST" action="" id="formulario">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{formulario_form.Nombre.label}}
+                    {{formulario_form.Nombre}}
+                </div>
+                <div class="form-group">
+                    {{formulario_form.rut.label}}
+                    {{formulario_form.rut}}
+                </div>
+                <div class="form-group">
+                    {{formulario_form.Mail.label}}
+                    {{formulario_form.Mail}}
+                </div>
+                <div class="form-group">
+                    {{formulario_form.Pass.label}}
+                    {{formulario_form.Pass}}
+                </div>
+                <div class="form-group">
+                    {{formulario_form.Cel.label}}
+                    {{formulario_form.Cel}}
+                </div>
+                <!--Por qué un onclick arruina las validaciones? nadie sabe-->
+                <input type="submit" value="Enter" onclick="return validacion(), link()">
+                <script>
+                    function link(){
+                        confirm("Datos correctamente enviados, presione aceptar para continuar! ")
+                            if (window.confirm('Presione aceptar para ir a la sig página')) 
+                            {
+                            location.href="{% url 'Form2' %}";
+                            }
+                            return false;
+                    }
+                </script>
+                <!--OH GOD LO LOGRÉ HACE LO QUE QUIERO QUE HAGA SOY TAN FELIZ-->
+                <input type="reset" value="Limpiar">
+
+                <hr class="hrw"><br><br><br>
+            </form>
         </div>
     </div>
-
-        <!--Por qué un onclick arruina las validaciones? nadie sabe-->
-        <input type="submit" value="Enter" onclick="return validacion(), link()">
-        <script>
-            function link(){
-                confirm("Datos correctamente enviados, presione aceptar para continuar! ")
-                    if (window.confirm('Presione aceptar para ir a la sig página')) 
-                    {
-                    location.href="{% url 'Form2' %}";
-                    }
-                    return false;
-            }
-        </script>
-        <!--OH GOD LO LOGRÉ HACE LO QUE QUIERO QUE HAGA SOY TAN FELIZ-->
-        <input type="reset" value="Limpiar">
-
-        <hr class="hrw"><br><br><br>
-    </form>
-
     <footer> 
         <br> <br>
     
