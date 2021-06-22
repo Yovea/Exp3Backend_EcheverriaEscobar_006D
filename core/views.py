@@ -14,7 +14,7 @@ def exitscam(request):
     return render(request, 'core/exitscam.html')
 
 def dummylogin(request):
-    return render(request, 'core/dummylogin.html')
+    return render(request, 'core/dummylogin.html') ##
 
 def dummydata(request):
     return render(request, 'core/dummydata.html')
