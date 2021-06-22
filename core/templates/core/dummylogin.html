@@ -172,25 +172,8 @@
             <form method="POST" action="" id="formulario">
                 {% csrf_token %}
                 <div class="form-group">
-                    {{formulario_form.Nombre.label}}
-                    {{formulario_form.Nombre}}
-                </div>
-                <div class="form-group">
-                    {{formulario_form.rut.label}}
-                    {{formulario_form.rut}}
-                </div>
-                <div class="form-group">
-                    {{formulario_form.Mail.label}}
-                    {{formulario_form.Mail}}
-                </div>
-                <div class="form-group">
-                    {{formulario_form.Pass.label}}
-                    {{formulario_form.Pass}}
-                </div>
-                <div class="form-group">
-                    {{formulario_form.Cel.label}}
-                    {{formulario_form.Cel}}
-                </div>
+                {{ form.as_table}}
+                </div>     
                 <!--Por qué un onclick arruina las validaciones? nadie sabe-->
                 <input type="submit" value="Enter" onclick="return validacion(), link()">
                 <script>
