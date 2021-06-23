@@ -1,216 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
     {% load static %}
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{% static 'core/css/bootstrap.min.css'%}" type="text/css" rel="stylesheet"> 
-    <link href="{% static 'core/css/Estilos.css'%}" type="text/css" rel="stylesheet"> 
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="{% static 'core/css/bootstrap.min.css'%}" type="text/css" rel="stylesheet"> 
+      <link href="{% static 'core/css/Estilos.css'%}" type="text/css" rel="stylesheet"> 
 
-    <style>
-        body{
-          padding: 25px;
-          background-color: white;
-          color: black;
-          font-size: 25px;
-        }
-        .dark-mode{
-          background-color: #150704;
-          color: white;
-        }
-    </style>    
+      <title> Registro </title>
+  
+      <style>
+          body{
+            padding: 25px;
+            background-color: #5c12d3;
+            color: white;
+            font-size: 25px;
+          }
+  
+          .dark-mode{
+            background-color: white;
+            color: black;
+          }
+      </style>
+  
+       <!--Bara de navegacion-->
+      <nav class="navbar navbar-expand-lg navbar-dark">
+      <button class="navbar-toggler" type="button"> </button>
+      <div class="collapse navbar-collapse" id="opciones">   
+          <ul class="navbar-nav">
+              <li class="nav-item"> <a class="nav-link active" href="{% url 'home' %}">Inicio</a> </li>
+              <li class="nav-item"> <a class="nav-link active" href="{% url 'Galeria' %}">Galeria</a> </li>
+              <li class="nav-item"> <a class="nav-link active" href="{% url 'Compra' %}">Animales en venta</a> </li>  
+              <li  class="nav-item"> <a class="nav-link active" href="{% url 'Quienessomos' %}">Quienes somos</a> </li>     
+              <li  class="nav-item"> <a class="nav-link active" href="{% url 'Ordenes' %}">Ordenes</a> </li>    
+          </ul>
+            <span class="navbar-brand ml-auto"> <h4>[Brand] <img src="{% static 'core/img/flop.gif' %}" width="30" height="30" alt=""></h4> </span> 
+      </div>
+      </nav>
+  
+  </head>
+  <script>
+    $(function() 
+    {
+      $("formulariodummy1").validate({
+           rules: {
+            rutFormulario: "required",
+            nombreFormulario: "required",
+            mailFormulario: "required",
+            passFormulario: "required",
+            celnumFormulario: "required",
+            regionFormulario: "required",
+            ciudadFormulario: "required",
+            comunaFormulario: "required",
+            dirFormulario: "required",
+            metodFormulario: "required",
+                  },   
+                  
+             messages: 
+              {
+                rutFormulario: {
+                  required: 'Ingresa tu rut',
+                },
+                nombreFormulario: {
+                  required: 'Ingresa tu nombre',
+              },
+              mailFormulario:{
+                  required: 'Ingrese tu e-mail',
+                  
+              },
+              passFormulario:{
+                  required: 'Seleccione una contraseña',
+              },
+              celnumFormulario: {
+                  required: 'Ingresa tu numero telefonico',
+                },
+                regionFormulario: {
+                  required: 'Ingresa tu region',
+              },
+              ciudadFormulario:{
+                  required: 'Ingrese tu ciudad',
+              },
+              comunaFormulario:{
+                  required: 'Seleccione una comuna',
+              },
+              dirFormulario: {
+                  required: 'Ingresa tu direccion',
+                },
+                metodFormulario: {
+                  required: 'Ingresa tu metodo de pago',
+              },
+          }
+      });
+  }); 
+</script>
 
-    <link rel="icon" href="{% static 'core/img/flopa.jpg'%" type = "image/x-icon">
-    <title> Registro </title>
 
-    <script type="text/Javascript">
-        function CambiarMayusculas(){
-            var a = document.getElementById("nombre");
-            a.value = a.value.toUpperCase();
-        }
+    <body>
+      <br>
+      <div class="row">
+        <h1>Ingrese su orden!</h1>
+    </div>
 
-        //No entiendo la razon de porque necesitamos un script especifico para poner singular rut odio este pais
-        function checkRut(rut) {
-        //Puntos
-        var valor = rut.value.replace('.','');
-        //Guión
-        valor = valor.replace('-','');
-        
-        
-        cuerpo = valor.slice(0,-1);
-        dv = valor.slice(-1).toUpperCase();
-        
-        
-        rut.value = cuerpo + '-'+ dv
-        
-        // Si no cumple con el mínimo ej. (n.nnn.nnn)
-        if(cuerpo.length < 7) { rut.setCustomValidity("RUT Incompleto"); return false;}
-        
-        // Calcular Dígito Verificador
-        suma = 0;
-        multiplo = 2;
-        
-        // Para cada dígito del Cuerpo
-        for(i=1;i<=cuerpo.length;i++) {
-        
-            // Obtener su Producto con el Múltiplo Correspondiente
-            index = multiplo * valor.charAt(cuerpo.length - i);
-            
-            // Sumar al Contador General
-            suma = suma + index;
-            
-            // Consolidar Múltiplo dentro del rango [2,7]
-            if(multiplo < 7) { multiplo = multiplo + 1; } else { multiplo = 2; }
-    
-        }
-        
-        // Calcular Dígito Verificador en base al Módulo 11
-        dvEsperado = 11 - (suma % 11);
-        
-        // Casos Especiales (0 y K)
-        dv = (dv == 'K')?10:dv;
-        dv = (dv == 0)?11:dv;
-        
-        // Validar que el Cuerpo coincide con su Dígito Verificador
-        if(dvEsperado != dv) { rut.setCustomValidity("RUT Inválido"); return false; }
-        
-        // Si todo sale bien, eliminar errores (decretar que es válido)
-        rut.setCustomValidity('');
-        }
-        
-        //VALIDAR AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        function validacion(){
-
-            nom=document.getElementById('nombre').value;
-            pass=document.getElementById('pass').value;
-            fono=document.getElementById('telefono').value;
-            rut=document.getElementById('rut').value;
-
-            if(nom == null || nom.length==0 || /^\s+$/.test(nom))
-            {
-                alert('Error.. debe ingresar un nombre');
-                document.getElementById('nombre').value="";
-                document.datos.nom.focus();
-                return false;
-            }
-            
-            if(pass == null || pass.length==0 || /^\s+$/.test(pass))
-            {
-                alert('Error.. debe ingresar una contraseña valida');
-                document.getElementById('pass').value="";
-                document.datos.pass.focus();
-                return false;
-            }
-
-            if(rut == null || rut.length==0 || /^\s+$/.test(rut))
-            {
-                alert('Error.. debe ingresar un rut valido');
-                document.getElementById('rut').value="";
-                document.datos.rut.focus();
-                return false;
-            }
-
-            if(!(/^\d{9}$/.test(fono)) )
-            {
-                alert('Error...debe ingresar un teléfono válido');
-                document.getElementById('telefono').value="";
-                document.datos.fono.focus();
-                return false;
-            }    
-            return true;
-        } 
-
-        //voy a separar el email xq me odio
-        function validarEmail(valor) {
-            if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor)){
-                 alert("La dirección de email " + valor + " es correcta!.");
-            } else {
-                alert("La dirección de email es incorrecta!.");
-            }
-        }  
-    </script>
-
-</head>
-
-<!--Menu y cosas-->
-
-<body>
-    
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <button class="navbar-toggler" type="button"> </button>
-
-        <div class="collapse navbar-collapse" id="opciones">   
-            <ul class="navbar-nav">
-                <li class="nav-item"> <a class="nav-link active" href="{% url 'home' %}">Inicio</a> </li>
-                <li class="nav-item"> <a class="nav-link active" href="{% url 'Galeria' %}">Galeria</a> </li>
-                <li class="nav-item"> <a class="nav-link active" href="{% url 'Compra' %}">Animales en venta</a> </li>  
-                <li class="nav-item"> <a class="nav-link active" href="{% url 'Quienessomos' %}">Quienes somos</a> </li>          
-            </ul>
-              <span class="navbar-brand ml-auto"> <h4>[Brand] <img src="{% static 'core/img/flop.gif' %}" width="30" height="30" alt=""></h4> </span> 
-        </div>
-    </nav>
-    <button class="boton" onclick="myFunction()">Toggle dark mode</button>
-
-    <script>
-    function myFunction() {
-        var element = document.body;
-        element.classList.toggle("dark-mode");
-    }
-    </script>
-    
-    <br> <br>
-
-    <!--Ahora se viene lo bueno-->
-    <h1 class="titulo">Ingresar</h1>
-    <br> <br>
-    <hr class="hrw">
-    <br>
-
-    <div class="container">
+    <div class="row">
         <div class="row">
-            <form method="POST" action="" id="formulario">
-                {% csrf_token %}
+            <form method="POST" action="#" id="formulariodummy1">
+                {%csrf_token%}
                 <div class="form-group">
-                {{ form.as_table}}
-                </div>     
-                <!--Por qué un onclick arruina las validaciones? nadie sabe-->
-                <input type="submit" value="Enter" onclick="return validacion(), link()">
-                <script>
-                    function link(){
-                        confirm("Datos correctamente enviados, presione aceptar para continuar! ")
-                            if (window.confirm('Presione aceptar para ir a la sig página')) 
-                            {
-                            location.href="{% url 'Form2' %}";
-                            }
-                            return false;
-                    }
-                </script>
-                <!--OH GOD LO LOGRÉ HACE LO QUE QUIERO QUE HAGA SOY TAN FELIZ-->
-                <input type="reset" value="Limpiar">
+                    {{Formulario.rutFormulario}}
+                </div>
+                <div class="form-group">
+                    {{FormularioForm.nombreFormulario}}
+                </div>
+                <div class="form-group">
+                    {{FormularioForm.mailFormulario}}
+                </div>
+                <div class="form-group">
+                    {{FormularioForm.passFormulario}}
+                </div>
+                <div class="form-group">
+                  {{Formulario.celnumFormulario}}
+              </div>
+              <div class="form-group">
+                  {{FormularioForm.regionFormulario}}
+              </div>
+              <div class="form-group">
+                  {{FormularioForm.ciudadFormulario}}
+              </div>
+              <div class="form-group">
+                  {{FormularioForm.comunaFormulario}}
+              </div>
+              <div class="form-group">
+                {{Formulario.dirFormulario}}
+            </div>
+            <div class="form-group">
+                <h1>Porfavor Funciona</h1>
+                {{FormularioForm.metodFormulario}}
+            </div>
 
-                <hr class="hrw"><br><br><br>
+                <div class="form-group">
+                     <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
+                    <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
+                </div>
             </form>
         </div>
+
+
+
     </div>
-    <footer> 
-        <br> <br>
-    
-          <div style="margin-left: 5cm; text-align: left; ">
-            <p>Integrantes: <br> <br>
-              <a href="https://www.instagram.com/_thejod_/?hl=es-la"> <img src="{% static 'core/img/Icons/ig.png'%}" height="25" width="25"></a> Alain Echeverria.<br>
-              <a href="https://www.instagram.com/d3ad_beat_/?hl=es-la"> <img src="{% static 'core/img/Icons/ig.png'%}" height="25" width="25"></a> Sebastian Escobar.
-    
-          <div style="position: relative; bottom: 2.9cm; text-align: right; margin-right: 5cm; text-shadow: #ffffff 0px 1px;" >
-            Referencias  <br>
-            <a href="{% url 'Galeria' %}">  <h3>Galeria</h3> </a>
-            <a href="{% url 'Quienessomos' %}">  <h3>Quienes somos</h3>  </a>
-            <a href="{% url 'Compra' %}">  <h3>Nuestros animales</h3> </a>
-            <h2 style="text-align: center ;position: relative; top: 2.9cm;"> ©Copyright 2002-2021 </h2>
-          </div>
-         </div>
-     
-      </footer>
-
-
-</body>
+    </body> 
+  <footer> 
+          <br> <br>
+      
+            <div style="margin-left: 5cm; text-align: left; ">
+              <p>Integrantes: <br> <br>
+                <a href="https://www.instagram.com/_thejod_/?hl=es-la"> <img src="{% static 'core/img/Icons/ig.png'%}" height="25" width="25"></a> Alain Echeverria.<br>
+                <a href="https://www.instagram.com/d3ad_beat_/?hl=es-la"> <img src="{% static 'core/img/Icons/ig.png'%}" height="25" width="25"></a> Sebastian Escobar.
+      
+            <div style="position: relative; bottom: 2.9cm; text-align: right; margin-right: 5cm; text-shadow: #ffffff 0px 1px;" >
+              Referencias  <br>
+              <a href="{% url 'Galeria' %}">  <h3>Galeria</h3> </a>
+              <a href="{% url 'Quienessomos' %}">  <h3>Quienes somos</h3>  </a>
+              <a href="{% url 'Compra' %}">  <h3>Nuestros animales</h3> </a>
+              <h2 style="text-align: center ;position: relative; top: 2.9cm;"> ©Copyright 2002-2021 </h2>
+            </div>
+           </div>
+       
+  </footer>
+</html>

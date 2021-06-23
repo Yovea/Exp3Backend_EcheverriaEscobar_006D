@@ -7,6 +7,15 @@ from .models import Formulario
 class FormularioForm(ModelForm):
 
     class Meta:
-        model = Formulario 
-        fields =['rutFormulario', 'nombreFormulario', 'mailFormulario', 'passFormulario', 'celnumFormulario']
+        model = Formulario
+        fields =['rutFormulario', 
+                 'nombreFormulario', 
+                 'mailFormulario', 
+                 'passFormulario', 
+                 'celnumFormulario',
+                 'regionFormulario',
+                 'ciudadFormulario',
+                 'comunaFormulario',
+                 'dirFormulario',
+                 'metodFormulario']
  
